@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <title>Генератор псевдорандомных чисел | Pseudo-Random numbers Generator</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+<center>
+  <h1>Генератор псевдорандомных чисел | Pseudo-Random numbers Generator</h1>
+</center>
+<script type="text/javascript">
+	var chars="0123456789";
+
+	function gennumbers(numlen, numbstrength) {
+		xchars = chars;
+		if(numbstrength == 2) xchars;
+
+		password='';
+
+		for ( i=0; i<numlen; i++ )
+			password += xchars.charAt(Math.floor(Math.random()*xchars.length));
+
+		document.getElementById('pascode').value = password;
+	}
+</script>
+
+<p>&nbsp;</p>
+
+<div style="text-align: center;">
+	<form>
+		<b>Результат</b><br />
+		<input id="pascode" style="color:red;font-size:200%;" type="text" name="pascode" size=40 value=""><br /><br />
+		<b>Длина: </b><input type="text" name="numlen" size=3 value="12"><br /><br />
+		<b>Параметры: </b><br />
+    <p>Только цифры<input type="radio" name="numbstrength" size=3 value="2"></p>
+		<input type="button" value="Генерировать!" onClick="gennumbers(this.form.numlen.value, this.form.numbstrength.value)">
+	</form>
+</div>
+
+</body>
+</html>
