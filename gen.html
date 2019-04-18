@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-  <title>Генератор псевдорандомных чисел | Pseudo-Random numbers Generator</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	<title>Генератор псевдорандомных чисел | Pseudo-Random numbers Generator</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8; ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
 <center>
-  <h1>Генератор псевдорандомных чисел | Pseudo-Random numbers Generator</h1>
+  <h1>Генератор псевдорандомных чисел <br> Pseudo-Random numbers Generator</h1>
 </center>
 <script type="text/javascript">
 	var chars="0123456789";
@@ -26,17 +30,26 @@
 </script>
 
 <p>&nbsp;</p>
-
+	
 <div style="text-align: center;">
 	<form>
 		<b>Результат</b><br />
-		<input id="pascode" style="color:red;font-size:200%;" type="text" name="pascode" size=40 value=""><br /><br />
-		<b>Длина: </b><input type="text" name="numlen" size=3 value="12"><br /><br />
+		<input id="pascode" style="color:red;font-size:200%;" type="text" disabled name="pascode" size=40 value=""><br /><br />
+		<b>Длина: 
+		<div class="stepper stepper--style-2 js-spinner">
+    	<input autofocus type="number" id="numlen" min="2" step="1" value="2" class="stepper__input">
+    		<div class="stepper__controls">
+        		<button type="button" spinner-button="up">+</button>
+        		<button type="button" spinner-button="down">−</button>
+    		</div>
+</div>
+<br /><br />
 		<b>Параметры: </b><br />
-    <p>Только цифры<input type="radio" name="numbstrength" size=3 value="2"></p>
+    	<p>Только цифры<input type="radio" name="numbstrength" size=3 value="2"></p>
 		<input type="button" value="Генерировать!" onClick="gennumbers(this.form.numlen.value, this.form.numbstrength.value)">
 	</form>
 </div>
 
+<script src="js/stepper.min.js"></script>
 </body>
 </html>
